@@ -1,16 +1,22 @@
-# wotpositonmarker
+# WoT Map Editor
 
-A new Flutter project.
+A Flutter tool for placing and annotating markers on map images from World of Tanks. The app lets you load any image and draw several types of objects:
 
-## Getting Started
+- **Points** – mark tank positions with an identifier, description and tank type.
+- **Zones** – drag out rectangular regions and label them.
+- **Brush** – freehand areas created by drawing a path on the map.
 
-This project is a starting point for a Flutter application.
+All added objects can be exported to JSON so that the data can be used elsewhere.
 
-A few resources to get you started if this is your first Flutter project:
+## Usage
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Launch the app and press the image button to choose a map picture.
+2. Select a tank type and a drawing tool.
+3. Tap or drag on the map to create markers or areas.
+4. Use the toolbar to undo, clear everything, save the JSON file or view its contents.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The resulting JSON structure contains the original image name along with all collected points, zones and brushes.
+
+## Development
+
+The project uses Flutter. Run `flutter pub get` to fetch dependencies and `flutter run` to start the application. Widget tests are located in `test/`.

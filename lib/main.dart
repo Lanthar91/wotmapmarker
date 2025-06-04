@@ -3,14 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 
-void main() => runApp(WotMapEditor());
+void main() => runApp(const WotMapEditor());
 
 class WotMapEditor extends StatelessWidget {
+  const WotMapEditor({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WoT Map Editor',
-      home: MapEditorPage(),
+      home: const MapEditorPage(),
     );
   }
 }
@@ -19,6 +20,7 @@ enum ToolType { point, zone, brush }
 enum TankType { none, lt, mt, ht, td, spg, route }
 
 class MapEditorPage extends StatefulWidget {
+  const MapEditorPage({super.key});
   @override
   _MapEditorPageState createState() => _MapEditorPageState();
 }
@@ -333,8 +335,6 @@ class OverlayPainter extends CustomPainter {
       ..color = Colors.red.withOpacity(0.3)
       ..style = PaintingStyle.fill;
 
-    final pointPaint = Paint()
-      ..style = PaintingStyle.fill;
 
     // Assign color by tank type if available
     Map<String, Color> tankColors = {
